@@ -23,6 +23,8 @@ namespace TestParser.Core
 
         static bool HasCSVSpecialChars(string text)
         {
+            if (text == null) return false;
+
             return text.Contains('"') || text.Contains(',') || text.Contains('\r') || text.Contains('\n') || text.Contains('\t');
         }
 

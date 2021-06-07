@@ -47,8 +47,8 @@ namespace TestParser.Core
                                {
                                    TestResultFileType = Core.InputFileType.Trx,
                                    ResultsPathName = filename,
-                                   AssemblyPathName = (from td in testDefinitions where td.executionId == executionId select td.codeBase).Single(),
-                                   FullClassName = (from td in testDefinitions where td.executionId == executionId select td.className).Single(),
+                                   AssemblyPathName = (from td in testDefinitions where td.executionId == executionId select td.codeBase).SingleOrDefault(),
+                                   FullClassName = (from td in testDefinitions where td.executionId == executionId select td.className).SingleOrDefault(),
                                    ComputerName = utr.Attribute("computerName").Value,
                                    StartTime = st,
                                    EndTime = et,
